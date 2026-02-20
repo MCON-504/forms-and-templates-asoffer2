@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>TODO: Complete Part 2</h1>
+{%if grade >= 90%}
+    <h1>Excellent!</h1>
+{%elif grade >= 70 or grade <= 89%}
+    <h1>Good Job!</h1>
+{%else%}
+    <h1>Needs improvement</h1>
+{%endif%}
 {% endblock %}
