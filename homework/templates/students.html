@@ -19,6 +19,15 @@
                     <td>{{ student.grade }}</td>
                     <td>
                         <!-- TODO: Add conditional comments -->
+                        {% if student.grade >= 90 and student.grade <= 100 %}
+                            Excellent
+                        {% elif student.grade >= 70 and student.grade <= 89 %}
+                            Good
+                        {% elif student.grade >= 60 and student.grade <= 69 %}
+                            Passing
+                        {% elif student.grade < 60 %}
+                            Needs Improvement
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}
