@@ -34,6 +34,13 @@ def form_demo():
     if request.method == "POST":
         username = request.form.get("username")
 
+        if not username and len(username.strip())==0:
+            error = "Username is required"
+            username = None
+
+    if request.method == "GET":
+        username = request.form.get("username")
+
         if not username or username.strip() == "":
             error = "Username is required."
             username = None
